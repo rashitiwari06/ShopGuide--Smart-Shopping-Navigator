@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopGuide - Smart Shopping Navigator </title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wgh@300;400;500;600;700&
+    display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!--Background-->
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+
+    <!--Header-->
+    <header>
+        <h1>ShopGuide</h1>
+        <p>Find where to buy anything instantly</p>
+    </header> 
+
+    <!--Main Card-->
+    <div class="container">
+
+        <!--Progress Bar-->
+        <div class="progress">
+
+            <div class="progress-item">
+                <div id="stepOne" class="step active">1</div>
+                <span>Category</span>
+            </div>
+
+            <div class="line"></div>
+
+             <div class="progress-item">
+                <div id="stepTwo" class="step">2</div>
+                <span>Search</span>
+            </div>
+
+            <div class="line"></div>
+
+             <div class="progress-item">
+                <div id="stepThree" class="step">3</div>
+                <span>Results</span>
+            </div>
+    </div>
+            
+            <!--STEP1-->
+            <section id="page1" class="page active">
+                <h2>What are you looking for?</h2>
+                <div class="categories">
+                    <button onclick="selectCategory('food')">Food</button>
+                    <button onclick="selectCategory('clothes')">Clothes</button>
+                    <button onclick="selectCategory('grocery')">Grocery</button>
+                    <button onclick="selectCategory('electronics')">Electronics</button>
+                </div>
+            </section>
+
+            <!--STEP2-->
+            <section id="page2" class="page">
+                <h2 id="question">What are you searching for?</h2>
+                <div class="selected-category" id="selectedCategory"></div>
+                <input
+                      type="text"
+                      id="itemInput"
+                      placeholder="Enter item...">
+                
+                <button
+                       class="search-btn"
+                       onclick="searchItem()">Search</button>
+
+                <button
+                       class="back-btn"
+                       onclick="backToCategory()">Change Category </button>
+            </section>
+
+            <!--STEP3-->
+            <section id="page3" class="page">
+                <h2>Results</h2>
+                <div id="searchInfo"></div>
+
+                <!--Purchase Suggestions-->
+                <div id="productContainer"></div>
+
+                <!--Purchase Links-->
+                <div id="results"></div>
+
+                <button
+                       class="back-btn"
+                       onclick="backToSearch()">Change Item</button>
+            </section>
+
+
+    <!--Search History-->
+    <div class="history-section">
+        <h3>Recent Searches</h3>
+        <ul id="historyList"></ul>
+    </div>
+
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
